@@ -2,32 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.theme-custom {
+	/* Customize the look and feel of the theme here */
+	--gradient: linear-gradient(to top left, #16222a, #3a6073);
+	--background: 217 96.55% 98.26%;
+	--foreground: 217 3.1% 0.52%;
+
+	--muted: 217 3.1% 91.3%;
+	--muted-foreground: 217 1.55% 41.3%;
+
+	--popover: 217 65.2% 91.3%;
+	--popover-foreground: 217 3.1% 0.65%;
+
+	--card: 217 65.2% 91.3%;
+	--card-foreground: 217 3.1% 0.65%;
+
+	--border: 217 8.1% 89.52%;
+	--input: 217 8.1% 89.52%;
+
+	--primary: 217 31% 13%;
+	--primary-foreground: 217 0.62% 91.3%;
+
+	--secondary: 217 1.55% 95.65%;
+	--secondary-foreground: 217 2.86% 11.3%;
+
+	--accent: 217 1.55% 95.65%;
+	--accent-foreground: 217 2.86% 11.3%;
+
+	--destructive: 0 84.2% 60.2%;
+	--destructive-foreground: 0 0% 98%;
+
+	--ring: 217 31% 13%;
+
+	--radius: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.appWrapper {
+	@apply h-screen w-full bg-[#1890ff]/50 flex justify-center items-center md:py-[1rem];
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.pwaApp {
+	@apply h-full w-full md:w-[25rem] md:h-[90%] lg:h-[40rem] bg-white md:rounded-[2rem] transition-all duration-300 hover:shadow-xl shadow-gray-300 p-6 relative overflow-hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.newTodoBtn {
+	@apply absolute cursor-pointer flex items-center size-[3rem] hover:!bg-[#1890ff] hover:!shadow-lg shadow-[#1890ff] rounded-full bottom-6 right-6 bg-[#1890ff] text-white;
+}
+
+.cl-internal-b3fm6y {
+	@apply hidden;
+}
+
+.cl-userButtonPopoverFooter {
+	@apply hidden;
+}
+
+.cl-avatarBox {
+	@apply size-[2.5rem];
+}
+
+.newTodo {
+	@apply h-full w-full absolute top-0 left-[28rem] bg-white p-6 transition-all duration-300 z-10;
+}
+
+.newTodo.active {
+	@apply left-0;
+}
+
+.submitBtn{
+	@apply w-full !rounded-lg !bg-[#1890ff]/80 hover:!bg-[#1890ff] text-white
+}
+
+.todo{
+	border-radius: .5rem;
+	@apply flex flex-col w-full min-h-[3rem] border shadow-md my-2 p-1
 }
